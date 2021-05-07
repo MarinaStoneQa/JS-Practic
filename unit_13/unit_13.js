@@ -73,7 +73,7 @@ let a4 = {
 function f4() {
     let out = '';
     for (let key in a4) {
-        out += key + ' ' + a4[key] + ' <br> ';
+        out += `${key} ${a4[key]} <br>`;
     }
     return out;
 }
@@ -162,22 +162,15 @@ let a8 = {
 };
 
 function f8() {
-    let out = document.querySelector('.out-8');
-    let input = document.querySelector('.i-8').value;
-    // if (input in a8) {
-    //     out.innerHTML = input
-    // } else {
-    //     out.innerHTML = 0;
-    // }
-    if (a8.hasOwnProperty(input)) {
-        out.innerHTML = input
-    } else {
-        out.innerHTML = 0
-    }
+    let div = document.querySelector(".out-8");
+    let inp1 = document.querySelector(".i-8").value;
+    let out = "";
 
+    a8[inp1] !== undefined ? out = a8[inp1] : out = 0;
+
+    div.innerHTML = out;
 
 }
-
 document.querySelector('.b-8').onclick = f8;
 
 // Task 9
@@ -263,13 +256,16 @@ let a12 = {
 };
 
 function f12() {
-    let input = document.querySelector('.i-12').value;
+    let input = +document.querySelector('.i-12').value;
 
-    delete a12[input]
+    for (let key in a12) {
+        if (a12[key] === input)
+            delete a12[key]
+    }
 
     f5(a12, '.out-12');
-}
 
+}
 document.querySelector('.b-12').onclick = f12;
 
 // Task 13
