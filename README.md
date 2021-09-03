@@ -1,2 +1,2 @@
 # JS-Practic
-  My stady at "IT GID" on course  Java Script
+  My study at "IT GID" on course  Java Script
